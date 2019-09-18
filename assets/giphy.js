@@ -14,17 +14,16 @@ function printBtn(){
         btn.attr("data-type", topics[i]);
         $("#topics").append(btn)
         
-
-        console.log(btn)
     }
 }
 printBtn()
 
 //on click function
 $("<button>").on("click", function(){
+    console.log(click);
     
     //store "data-animal" name from the animal button
-    var animal = $(this).attr("data-type");  //btn?
+    var animal = $(this).attr("data-type");  
     console.log(animal);
 
     // query plus animal 
@@ -36,7 +35,24 @@ $("<button>").on("click", function(){
         method: "GET"
     })
     .then(function (response) {
-        console.log(response)
+        console.log(response);
+
+        var results = response.data;
+
+        for (var i = 0; i < results.length; i++) {
+            var gifDiv = $("#gifs-appear-here");
+            var rating = results[i].rating;
+            console.log(rating)
+            var p = $("<p>").text("Rating: " + rating);
+
+            var image = $("<img>");
+            image.attr(results[i].images);
+            console.log(image)
+            givDiv.append(image);
+            givDiv.append(p);
+
+
+        }
 
         //user clicks a button
             // append 10 static gifs should  be  placed on  the  page
