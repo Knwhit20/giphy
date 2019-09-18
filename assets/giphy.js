@@ -1,21 +1,30 @@
+$(document).ready(function () { 
+
 var topics = ["alpaca", "dog", "elephant", "sloth"];
 
+
+
 function printBtn(){
+    $("#topics").empty()
     for (var i = 0; i < topics.length; i++) {
         console.log(topics[i]);
-        var btn = document.createElement("button");
-        var t = document.createTextNode(topics[i]);
-        btn.appendChild(t);
-        document.body.appendChild(btn);
-        // btn.addClass("data-animal");
+        var btn = $("<button>");
+        btn.addClass("data-animal");
+        btn.text(topics[i]);
+        btn.attr("data-type", topics[i]);
+        $("#topics").append(btn)
+        
+
+        console.log(btn)
     }
 }
 printBtn()
 
 //on click function
-$("button").on("click", function(){
+$("<button>").on("click", function(){
+    
     //store "data-animal" name from the animal button
-    var animal = $(this).attr("data-animal");  //btn?
+    var animal = $(this).attr("data-type");  //btn?
     console.log(animal);
 
     // query plus animal 
@@ -46,4 +55,4 @@ $("button").on("click", function(){
     })
 })
 
-
+}) 
