@@ -9,7 +9,7 @@ function printBtn(){
     for (var i = 0; i < topics.length; i++) {
         console.log(topics[i]);
         var btn = $("<button>");
-        btn.addClass("data-animal");
+        btn.addClass("animal");
         btn.text(topics[i]);
         btn.attr("data-type", topics[i]);
         $("#topics").append(btn)
@@ -19,8 +19,8 @@ function printBtn(){
 printBtn()
 
 //on click function
-$("<button>").on("click", function(){
-    console.log(click);
+$(".animal").on("click", function(){
+    console.log("click");
     
     //store "data-animal" name from the animal button
     var animal = $(this).attr("data-type");  
