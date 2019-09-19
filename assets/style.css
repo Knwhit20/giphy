@@ -1,7 +1,6 @@
 body {
-    background-color: 
+    background-color:
 }
-
 
 button {
     background-color: blue;
@@ -12,19 +11,37 @@ button {
     border-color: aquamarine;
 }
 
-#gifColumn{
+#gifColumn {
     margin-left: 15px;
 }
 
-.container{
+.container {
     margin-right: 40px;
 }
+
 .gifDiv {
     float: left;
     padding: 20px;
     clear: right;
-   
 }
+
 .row {
     margin: 10px;
+}
+
+#submitAnimal {
+    background-color: rgb(6, 224, 213);
+    margin: 10px;
+    color: azure;
+    border: 5px;
+    border-style: groove;
+    border-color: aquamarine;
+}
+
+body {
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+#animalInput {
+    background-color: rgb(6, 224, 213);
 }
