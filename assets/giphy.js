@@ -23,8 +23,14 @@ $(document).ready(function () {
             event.preventDefault();
             console.log("click");
             var animalInput = $("#animalInput").val().trim();
+                if (animalInput === "") {
+                    return false;
+                }
+                    
+            
             topics.push(animalInput);
             printBtn();
+
             
         })
     }
@@ -96,4 +102,6 @@ $(document).ready(function () {
 
 })
 
-
+// not all gifs respond to click
+// how to add button to top list of buttons
+//format buttons 3 on row
