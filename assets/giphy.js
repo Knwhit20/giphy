@@ -40,25 +40,23 @@ $(document).ready(function () {
                 var results = response.data;
 
                 for (var i = 0; i < results.length; i++) {
+                    
                     var gifDiv = $("<div>");
+                    gifDiv.addClass("gifDiv")
 
                     var p = $("<p>").text("Rating: " + results[i].rating);
 
                     var animalImage = $("<img>");
 
-                    animalImage.attr("src", results[i].images.fixed_height_still.url);
-
-                    console.log(animalImage)
-
-                    $("#gifs-appear-here").append(p, animalImage);
-                    // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+                    animalImage.attr("src", results[i].images.fixed_height_small_still.url);   //small still stored  to src of image
+                    animalImage.attr("data-still", results[i].images.fixed_height_small_still.url); //still  image
+                    animalImage.attr("data-animate", results[i].images.fixed_height_small.url);  //animated image
+                    animalImage.attr("data-state", "still");   //set image state
+                    animalImage.addClass("image");
+                    gifDiv.append(p, animalImage);
+                    $("#gifs-appear-here").append(gifDiv);
                     
                     
-                    var state = $(animalImage).attr("data-state");
-
-                    
-
-
                 }
 
 

@@ -1,7 +1,8 @@
-.button.animal {
-    background-color: blueviolet;
-    color: white
+
+form {
+    float:right;
 }
-#animalForm {
-    float:left;
+button {
+    background-color: aqua;
+    margin: 10px;
 }
