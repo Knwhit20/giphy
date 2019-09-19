@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var topics = ["alpaca", "dog", "elephant", "sloth"];
+    var topics = ["alpaca", "dog", "elephant", "sloth", "seaturtle", "monk-seal", "giraffe", "llama", "bear", "hippo"];
 
 
 
@@ -12,11 +12,25 @@ $(document).ready(function () {
             btn.addClass("animal");
             btn.text(topics[i]);
             btn.attr("data-type", topics[i]);
-            $("#topics").append(btn)
+            $("#topics").append(btn);
 
         }
     }
+    
+
+    function addButton() {
+        $("#submitAnimal").on("click", function() {
+            event.preventDefault();
+            console.log("click");
+            var animalInput = $("#animalInput").val().trim();
+            topics.push(animalInput);
+            printBtn();
+            
+        })
+    }
+
     printBtn()
+    addButton()
 
     //on click function
     $(".animal").on("click", function () {
@@ -36,7 +50,7 @@ $(document).ready(function () {
         })
             .then(function (response) {
                 console.log(response);
-
+                $("#gifs-appear-here").empty()
                 var results = response.data;
 
                 for (var i = 0; i < results.length; i++) {
@@ -53,27 +67,31 @@ $(document).ready(function () {
                     animalImage.attr("data-animate", results[i].images.fixed_height_small.url);  //animated image
                     animalImage.attr("data-state", "still");   //set image state
                     animalImage.addClass("image");
-                    gifDiv.append(p, animalImage);
-                    $("#gifs-appear-here").append(gifDiv);
+                    gifDiv.prepend(p);
+                    gifDiv.prepend(animalImage);
+                    $("#gifs-appear-here").prepend(gifDiv);
                     
                     
                 }
-
-
             })
+            //on click animate function
+        $(document).on("click", ".image", function () {
 
+            var state = $(this).attr("data-state");
+
+            if (state === "still") {
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+            } else {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
+            }
+
+        })
        
     });
-    //user clicks a button
-    // append 10 static gifs should  be  placed on  the  page
-
-    //click gif, gif animate
-
-    // else another click, gif return to static
-
-    //add form that takes user input and adds to topics array
-
-    //function that takes topic in array and remakes button on page?
+   
+    
 
 
 })

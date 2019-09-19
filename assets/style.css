@@ -1,8 +1,12 @@
-
 form {
-    float:right;
+    float: right;
 }
+
 button {
     background-color: aqua;
     margin: 10px;
+}
+
+#gifColumn{
+    margin-left: 15px;
 }
