@@ -1,10 +1,11 @@
 /* form {
-    float: right;
+    float: left;
 } */
 
 button {
-    background-color: aqua;
+    background-color: blue;
     margin: 10px;
+    color: azure;
 }
 
 #gifColumn{
