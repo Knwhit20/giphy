@@ -1,6 +1,6 @@
-form {
+/* form {
     float: right;
-}
+} */
 
 button {
     background-color: aqua;
@@ -13,4 +13,13 @@ button {
 
 .container{
     margin-right: 40px;
+}
+.gifDiv {
+    float: left;
+    padding: 20px;
+    clear: right;
+   
+}
+.row {
+    margin: 10px;
 }

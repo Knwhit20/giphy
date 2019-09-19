@@ -39,7 +39,7 @@ $(document).ready(function () {
     addButton()
 
     //on click function
-    $(".animal").on("click", function () {
+    $("#topics").on("click",".animal", function () {
         console.log("click");
 
         //store "data-animal" name from the animal button
@@ -68,9 +68,9 @@ $(document).ready(function () {
 
                     var animalImage = $("<img>");
 
-                    animalImage.attr("src", results[i].images.fixed_height_small_still.url);   //small still stored  to src of image
-                    animalImage.attr("data-still", results[i].images.fixed_height_small_still.url); //still  image
-                    animalImage.attr("data-animate", results[i].images.fixed_height_small.url);  //animated image
+                    animalImage.attr("src", results[i].images.fixed_height_still.url);   //small still stored  to src of image
+                    animalImage.attr("data-still", results[i].images.fixed_height_still.url); //still  image
+                    animalImage.attr("data-animate", results[i].images.fixed_height.url);  //animated image
                     animalImage.attr("data-state", "still");   //set image state
                     animalImage.addClass("image");
                     gifDiv.prepend(p);
