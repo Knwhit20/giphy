@@ -1,11 +1,15 @@
-/* form {
-    float: left;
-} */
+body {
+    background-color: 
+}
+
 
 button {
     background-color: blue;
     margin: 10px;
     color: azure;
+    border: 5px;
+    border-style: groove;
+    border-color: aquamarine;
 }
 
 #gifColumn{

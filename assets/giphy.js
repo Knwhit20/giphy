@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var topics = ["alpaca", "dog", "elephant", "sloth", "seaturtle", "monk-seal", "giraffe", "llama", "bear", "hippo"];
+    var topics = ["peru", "usa", "croatia", "france", "england", "italy", "japan", "netherlands", "finland", "egypt",  "kenya", "nigeria", "ghana", "india", "chile", "brazil", "canada", "morroco", "scotland", "ireland"];
 
 
 
